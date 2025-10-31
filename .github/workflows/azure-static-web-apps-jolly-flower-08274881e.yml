@@ -19,10 +19,12 @@ jobs:
         with:
           submodules: true
           lfs: false
+
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '22.14.0'
+          node-version-file: '.nvmrc'
+          cache: 'npm'
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
